@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block head %}
+    <title>Flowerpot · {% block title %}{% endblock %}</title>
+    {% endblock %}
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Flowerpot custom styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flowerpot.css') }}">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">FP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#fp-navbar" aria-controls="fp-navbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="fp-navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Browse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Get in touch</a>
+                </li>
+            </ul>
+            <form class="fp-login form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
+                <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log in</button>
+                <a class="btn btn-outline-secondary" href="/register">Sign up</a>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="jumbotron">
+        <h1>Flowerpot</h1>
+        <p class="lead">WGC's home of gifts.</p>
+    </div>
+    {% block body %}{% endblock %}
+
+</main>
+
+<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>
