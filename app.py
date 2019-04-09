@@ -2,17 +2,19 @@ import sys
 
 sys.path.append("N:\python-modules")
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 import sqlite3
 from sqlite3 import Error
 
 from datetime import datetime
 from flask_bcrypt import Bcrypt
-from flask_session import Session
+
+# from flask_session import Session
 
 DB_NAME = "flowerpot.db"
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
+app.secret_key = "banana"
 
 
 def create_connection(db_file):
@@ -101,7 +103,7 @@ def products_page():
     cur = con.cursor()  # You need this line next
     cur.execute(query)  # this line actually executes the query
     products = cur.fetchall()  # puts the results into a list usable in pythons
-    print(products)  # so I can see if/what data is coming from the database
+    # print(products)  # so I can see if/what data is coming from the database
     con.close()  # close the connection, super important
 
     # pass the results to the template to create the page
@@ -116,7 +118,7 @@ def individual_product_page(product_id):
     cur = con.cursor()
     cur.execute(query, (product_id,))
     product_data = cur.fetchall()
-    print(product_data)
+    # print(product_data)
     con.close()
     return render_template("product.html", product=product_data[0])
 
@@ -131,29 +133,55 @@ def create_new_user():
     phone = request.form['phone'].strip()
     password = request.form['password'].strip()
     password2 = request.form['password2'].strip()
-    print(fname, lname, dob, wananga, email, phone, password, password2)
+    # print(fname, lname, dob, wananga, email, phone, password, password2)
 
     if password != password2:
         return redirect(request.referrer + "?error=Passwords+don't+match")
 
-    for item in [fname, lname, dob, wananga, email, phone, password,password2]
-        if len(item<1):
+    for item in [fname, lname, dob, wananga, email, phone, password, password2]:
+        if len(item) < 1:
             return redirect(request.referrer + "?error=Please+enter+valid+data+in+all+fields")
 
-    hashed_password = bcrypt.generate_password_hash(password)
-    # to check hash bcrypt.check_password_hash(pw_hash, 'hunter2')
-    print(hashed_password)
+    hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+    # print(hashed_password)
+    # print(bcrypt.check_password_hash(hashed_password, password))
     con = create_connection(DB_NAME)
     now = datetime.now()
     user = (fname, lname, dob, wananga, email, phone, hashed_password, now)
-    sql = """INSERT INTO user(id, firstname, lastname, dob, wananga, email, phone_number, password, signedup)
+    query = """INSERT INTO user(id, firstname, lastname, dob, wananga, email, phone_number, password, signedup)
                 VALUES (NULL,?,?,?,?,?,?,?,?);"""
     cur = con.cursor()
-    cur.execute(sql, user)
+    cur.execute(query, user)
     con.commit()
     con.close()
 
     return redirect('/')
+
+
+@app.route('/login', methods=["POST"])
+def log_in():
+    email = request.form['login-email']
+    password = request.form['login-password']
+    # print(email, password)
+
+    query = """SELECT password FROM user WHERE email = ?"""
+    con = create_connection(DB_NAME)
+    cur = con.cursor()
+    cur.execute(query, (email,))
+    db_password = cur.fetchall()
+
+    # check if email is in the database (if it isn't, db_password[0][0] will raise an error)
+    try:
+        print(db_password[0][0])
+    except IndexError:
+        return redirect(request.referrer + "?error=Email+invalid+or+password+incorrect")
+
+    # check if the password is incorrect for that email address
+    if not bcrypt.check_password_hash(db_password[0][0], password):
+        return redirect(request.referrer + "?error=Email+invalid+or+password+incorrect")
+
+    session['email'] = email
+    return redirect(request.referrer)
 
 
 @app.route('/contact')
@@ -168,6 +196,10 @@ def register_page():
 
 @app.route('/trellos')
 def trellos():
+    try:
+        print(session['email'])
+    except KeyError:
+        print("NO")
     return render_template("trellos.html")
 
 

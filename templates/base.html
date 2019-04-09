@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block head %}
-    <title>Flowerpot · {% block title %}{% endblock %}</title>
+        <title>Flowerpot · {% block title %}{% endblock %}</title>
     {% endblock %}
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,400,700" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,400,700" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
@@ -20,7 +21,8 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">FP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#fp-navbar" aria-controls="fp-navbar"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#fp-navbar"
+                aria-controls="fp-navbar"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,12 +39,13 @@
                     <a class="nav-link" href="/contact">Get in touch</a>
                 </li>
             </ul>
-            <form class="fp-login form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
-                <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+            <form class="fp-login form-inline my-2 my-lg-0" method="post" action="/login">
+                <input class="form-control mr-sm-2" name="login-email" id="login-email" type="email" placeholder="Email" aria-label="Email">
+                <input class="form-control mr-sm-2" name="login-password" id="login-password" type="password" placeholder="Password" aria-label="Password">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log in</button>
-                <a class="btn btn-outline-secondary ml-2" href="/register">Sign up</a>
             </form>
+            <a class="btn btn-outline-secondary ml-2" href="/register">Sign up</a>
+
         </div>
     </div>
 </nav>
