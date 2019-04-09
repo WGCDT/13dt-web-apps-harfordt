@@ -6,8 +6,13 @@ from flask import Flask, render_template, request, redirect
 import sqlite3
 from sqlite3 import Error
 
+from datetime import datetime
+from flask_bcrypt import Bcrypt
+from flask_session import Session
+
 DB_NAME = "flowerpot.db"
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
 
 def create_connection(db_file):
@@ -62,17 +67,20 @@ def initialise_tables(con):
                                 dob DATE NOT NULL,
                                 wananga TEXT NOT NULL,
                                 email TEXT NOT NULL,
-                                phone_number TEXT NOT NULL
+                                phone_number TEXT NOT NULL,
+                                password TEXT NOT NULL,
+                                signedup DATETIME NOT NULL
                                 )
                         """
     create_table(con, create_user_table)
 
-    users = [["Jim", "Smith", "1985-04-10", "9HFT", "jim.smith@gmail.com", "0212348576"],
-             ["Ada", "Lovelace", "2001-10-07", "9HFK", "ada.lovelace@gmail.com", "02112345456"],
-             ["Mary", "Queen of Scots", "2000-02-02", "10JNM", "mary.socts@gmail.com", "290200"]]
+    users = [["Jim", "Smith", "1985-04-10", "9HFT", "jim.smith@gmail.com", "0212348576", "banana"],
+             ["Ada", "Lovelace", "2001-10-07", "9HFK", "ada.lovelace@gmail.com", "02112345456", "banana"],
+             ["Mary", "Queen of Scots", "2000-02-02", "10JNM", "mary.socts@gmail.com", "290200", "banana"]]
 
     for user in users:
-        sql = """INSERT INTO user(id, firstname, lastname, dob, wananga, email, phone_number) VALUES (NULL,?,?,?,?,?,?);"""
+        sql = """INSERT INTO user(id, firstname, lastname, dob, wananga, email, phone_number, password, signedup) 
+                    VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, strftime('%Y-%m-%d %H-%M-%S','now'));"""
         cur = con.cursor()
         cur.execute(sql, user)
         con.commit()
@@ -113,6 +121,39 @@ def individual_product_page(product_id):
     return render_template("product.html", product=product_data[0])
 
 
+@app.route('/create-new-user', methods=['POST'])
+def create_new_user():
+    fname = request.form['fname'].strip().capitalize()
+    lname = request.form['lname'].strip().capitalize()
+    dob = request.form['dob']
+    wananga = request.form['wananga'].strip().upper()
+    email = request.form['email'].strip().lower()
+    phone = request.form['phone'].strip()
+    password = request.form['password'].strip()
+    password2 = request.form['password2'].strip()
+    print(fname, lname, dob, wananga, email, phone, password, password2)
+
+    if password != password2:
+        return redirect(request.referrer + "?error=Passwords+don't+match")
+
+    for item in [fname, lname, dob, wananga, email, phone, password,password2]
+        if len(item<1):
+            return redirect(request.referrer + "?error=Please+enter+valid+data+in+all+fields")
+
+    hashed_password = bcrypt.generate_password_hash(password)
+    # to check hash bcrypt.check_password_hash(pw_hash, 'hunter2')
+    print(hashed_password)
+    con = create_connection(DB_NAME)
+    now = datetime.now()
+    user = (fname, lname, dob, wananga, email, phone, hashed_password, now)
+    sql = """INSERT INTO user(id, firstname, lastname, dob, wananga, email, phone_number, password, signedup)
+                VALUES (NULL,?,?,?,?,?,?,?,?);"""
+    cur = con.cursor()
+    cur.execute(sql, user)
+    con.commit()
+    con.close()
+
+    return redirect('/')
 
 
 @app.route('/contact')
