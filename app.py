@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("N:\python-modules")
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 import sqlite3
 from sqlite3 import Error
 
@@ -14,7 +14,7 @@ def create_connection(db_file):
     """create a connection to the sqlite db"""
     try:
         connection = sqlite3.connect(db_file)
-        #initialise_tables(connection)
+        # initialise_tables(connection)
         return connection
     except Error as e:
         print(e)
@@ -89,12 +89,12 @@ def products_page():
     con = create_connection(DB_NAME)
 
     # execute the query
-    query = "SELECT * FROM product"
-    cur = con.cursor()
-    cur.execute(query)
-    products = cur.fetchall()
-    print(products)
-    con.close()
+    query = "SELECT id, name, description, image FROM product"  # SELECT the things you want from your table(s)
+    cur = con.cursor()  # You need this line next
+    cur.execute(query)  # this line actually executes the query
+    products = cur.fetchall()  # puts the results into a list usable in pythons
+    print(products)  # so I can see if/what data is coming from the database
+    con.close()  # close the connection, super important
 
     # pass the results to the template to create the page
     return render_template("products.html", products=products)
@@ -111,6 +111,8 @@ def individual_product_page(product_id):
     print(product_data)
     con.close()
     return render_template("product.html", product=product_data[0])
+
+
 
 
 @app.route('/contact')

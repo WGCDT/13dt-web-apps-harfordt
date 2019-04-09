@@ -7,13 +7,19 @@
 {% endblock %}
 
 {% block body %}
-    <div class="product-detail clearfix">
-        <h2>{{ product[1] }}</h2>
-        <img class="float-right w-50" src="{{ url_for('static', filename='images/'+product[4]) }}">
-        <p>{{ product[2] }}</p>
-        <p><strong>Price: </strong>${{ product[3] }}</p>
-        <p><strong>In stock: </strong>{{ product[6] }}</p>
-    </div>
+    <div class="row justify-content-center">
+        <div class="col-8">
 
-    <a class="btn btn-outline-secondary float-right" href="/addtocart/{{ product[0] }}">Add to cart &raquo;</a>
+
+            <div class="product-detail clearfix">
+                <h2>{{ product[1] }}</h2>
+                <img class="float-right w-50" src="{{ url_for('static', filename='images/'+product[4]) }}">
+                <p>{{ product[2] }}</p>
+                <p><strong>Price: </strong>${{ product[3] }}</p>
+                <p><strong>In stock: </strong>{{ product[6] }}</p>
+            </div>
+
+            <a class="btn btn-outline-secondary float-right" href="/addtocart/{{ product[0] }}">Add to cart &raquo;</a>
+        </div>
+    </div>
 {% endblock %}}

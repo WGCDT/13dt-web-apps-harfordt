@@ -10,17 +10,16 @@
     <h2>Products</h2>
     <div class="card-columns">
         {% for product in products %}
-
             <div class="shadow card pb-3">
-                <img class="card-img-top" src="{{ url_for('static', filename='images/'+product[4]) }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ url_for('static', filename='images/'+product[3]) }}"
+                     alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ product[1] }}</h5>
-                    <p class="card-text">{{  product[2] }}</p>
-                    <a class="btn btn-outline-secondary float-right" href="/products/{{ product[0] }}">More info</a>
+                    <p class="card-text">{{ product[2] }}</p>
+                    <a class="btn btn-outline-secondary float-right" href="/products/{{ product[0] }}">More info
+                        &raquo;</a>
                 </div>
             </div>
-
-
         {% endfor %}
     </div>
 {% endblock %}}
