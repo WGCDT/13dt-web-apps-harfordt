@@ -90,7 +90,7 @@ def initialise_tables(con):
 
 @app.route('/')
 def home_page():
-    return render_template("home.html")
+    return render_template("home.html", logged_in=is_logged_in(), session=session)
 
 
 @app.route('/products')
@@ -106,8 +106,9 @@ def products_page():
     # print(products)  # so I can see if/what data is coming from the database
     con.close()  # close the connection, super important
 
+
     # pass the results to the template to create the page
-    return render_template("products.html", products=products)
+    return render_template("products.html", products=products, logged_in=is_logged_in(), session=session)
 
 
 @app.route('/products/<product_id>')
@@ -120,8 +121,14 @@ def individual_product_page(product_id):
     product_data = cur.fetchall()
     # print(product_data)
     con.close()
-    return render_template("product.html", product=product_data[0])
+    return render_template("product.html", product=product_data[0], logged_in=is_logged_in(), session=session)
 
+@app.route('/profile')
+def profile_page():
+    if is_logged_in():
+        return render_template("profile.html", logged_in=is_logged_in(), session=session)
+    else:
+        return redirect('/')
 
 @app.route('/create-new-user', methods=['POST'])
 def create_new_user():
@@ -164,44 +171,74 @@ def log_in():
     password = request.form['login-password']
     # print(email, password)
 
-    query = """SELECT password FROM user WHERE email = ?"""
+    query = """SELECT id, firstname, password FROM user WHERE email = ?"""
     con = create_connection(DB_NAME)
     cur = con.cursor()
     cur.execute(query, (email,))
-    db_password = cur.fetchall()
+    user_data = cur.fetchall()
 
-    # check if email is in the database (if it isn't, db_password[0][0] will raise an error)
+    # if given the email is not in the database this will raise an error
+    # would be better to find out how to see if the query return an empty resultset
     try:
-        print(db_password[0][0])
+        id = user_data[0][0]
+        firstname = user_data[0][1]
+        db_password = user_data[0][2]
     except IndexError:
         return redirect(request.referrer + "?error=Email+invalid+or+password+incorrect")
 
     # check if the password is incorrect for that email address
-    if not bcrypt.check_password_hash(db_password[0][0], password):
+    if not bcrypt.check_password_hash(db_password, password):
         return redirect(request.referrer + "?error=Email+invalid+or+password+incorrect")
 
     session['email'] = email
+    session['id'] = id
+    session['firstname'] = firstname
     return redirect(request.referrer)
 
 
 @app.route('/contact')
 def contact_page():
-    return render_template("contact.html")
+    return render_template("contact.html", logged_in=is_logged_in(), session=session)
 
 
 @app.route('/register')
 def register_page():
+    if is_logged_in():
+        return redirect("/" + "?error=Woops+you+tried+to+go+somewhere+you+shouldnt")
     return render_template("register.html")
+
+
+def is_logged_in():
+    try:
+        print(session['email'])
+        return True
+    except KeyError:
+        print("NO")
+        return False
 
 
 @app.route('/trellos')
 def trellos():
+    ##################################################################
+    ### this route is just for testing, it isn't a page in the app ###
+    ##################################################################
     try:
-        print(session['email'])
+        print("##### SESSION DATA #####")
+        for key in session.keys():
+            print(session[key])
     except KeyError:
         print("NO")
+    print("### END SESSION DATA ###")
     return render_template("trellos.html")
 
 
+@app.route('/logout')
+def logout():
+    print(list(session.keys()))
+    [session.pop(key) for key in list(session.keys())]
+    print(list(session.keys()))
+    return redirect('/' + '?message=See+you+next+time!')
+
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True, use_debugger=False, use_reloader=False, passthrough_errors=True)
