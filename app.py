@@ -21,7 +21,7 @@ def create_connection(db_file):
     """create a connection to the sqlite db"""
     try:
         connection = sqlite3.connect(db_file)
-        # initialise_tables(connection)
+        initialise_tables(connection)
         return connection
     except Error as e:
         print(e)
@@ -51,16 +51,16 @@ def initialise_tables(con):
                         """
     create_table(con, create_product_table)
 
-    products = [["Keyring", "Put all your keys on it", 4.5, "keychain.jpg", "Personal", 20],
-                ["Heart mug", "Mug with a heart on it", 8, "mug.jpg", "Personal", 12],
-                ["Eazy-E t-shirt", "What your mum wants", 25, "eazy.jpg", "Personal", 3],
-                ["Bow and arrow", "Fun for everyone", 40, "bowhunting.jpg", "personal", 7]]
-
-    for product in products:
-        sql = """INSERT INTO product(id, name, description, price, image, category,stock) VALUES (NULL,?,?,?,?,?,?);"""
-        cur = con.cursor()
-        cur.execute(sql, product)
-        con.commit()
+    # products = [["Keyring", "Put all your keys on it", 4.5, "keychain.jpg", "Personal", 20],
+    #             ["Heart mug", "Mug with a heart on it", 8, "mug.jpg", "Personal", 12],
+    #             ["Eazy-E t-shirt", "What your mum wants", 25, "eazy.jpg", "Personal", 3],
+    #             ["Bow and arrow", "Fun for everyone", 40, "bowhunting.jpg", "personal", 7]]
+    #
+    # for product in products:
+    #     sql = """INSERT INTO product(id, name, description, price, image, category,stock) VALUES (NULL,?,?,?,?,?,?);"""
+    #     cur = con.cursor()
+    #     cur.execute(sql, product)
+    #     con.commit()
 
     create_user_table = """CREATE TABLE IF NOT EXISTS user(
                                 id INTEGER PRIMARY KEY,
@@ -76,16 +76,24 @@ def initialise_tables(con):
                         """
     create_table(con, create_user_table)
 
-    users = [["Jim", "Smith", "1985-04-10", "9HFT", "jim.smith@gmail.com", "0212348576", "banana"],
-             ["Ada", "Lovelace", "2001-10-07", "9HFK", "ada.lovelace@gmail.com", "02112345456", "banana"],
-             ["Mary", "Queen of Scots", "2000-02-02", "10JNM", "mary.socts@gmail.com", "290200", "banana"]]
+    # users = [["Jim", "Smith", "1985-04-10", "9HFT", "jim.smith@gmail.com", "0212348576", "banana"],
+    #          ["Ada", "Lovelace", "2001-10-07", "9HFK", "ada.lovelace@gmail.com", "02112345456", "banana"],
+    #          ["Mary", "Queen of Scots", "2000-02-02", "10JNM", "mary.socts@gmail.com", "290200", "banana"]]
+    #
+    # for user in users:
+    #     sql = """INSERT INTO user(id, firstname, lastname, dob, wananga, email, phone_number, password, signedup)
+    #                 VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, strftime('%Y-%m-%d %H-%M-%S','now'));"""
+    #     cur = con.cursor()
+    #     cur.execute(sql, user)
+    #     con.commit()
 
-    for user in users:
-        sql = """INSERT INTO user(id, firstname, lastname, dob, wananga, email, phone_number, password, signedup) 
-                    VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, strftime('%Y-%m-%d %H-%M-%S','now'));"""
-        cur = con.cursor()
-        cur.execute(sql, user)
-        con.commit()
+    create_purchase_table = """CREATE TABLE IF NOT EXISTS purchase(
+                                id INTEGER PRIMARY KEY,
+                                userid INTEGER NOT NULL ,
+                                productid INTEGER NOT NULL ,
+                                ordertime DATETIME NOT NULL
+                            )"""
+    create_table(con, create_purchase_table)
 
 
 @app.route('/')
@@ -106,7 +114,6 @@ def products_page():
     # print(products)  # so I can see if/what data is coming from the database
     con.close()  # close the connection, super important
 
-
     # pass the results to the template to create the page
     return render_template("products.html", products=products, logged_in=is_logged_in(), session=session)
 
@@ -123,12 +130,27 @@ def individual_product_page(product_id):
     con.close()
     return render_template("product.html", product=product_data[0], logged_in=is_logged_in(), session=session)
 
+
+@app.route('/addtocart/<productid>')
+def add_to_cart(productid):
+    con = create_connection(DB_NAME)
+    query = "INSERT INTO purchase(id, userid, productid, ordertime) VALUES (NULL,?,?,?)"
+    print(query)
+    now = datetime.now()
+    cur = con.cursor()
+    cur.execute(query, (session['userid'], productid, now))
+    con.commit()
+    con.close()
+    return redirect(request.referrer + "?message=Added")
+
+
 @app.route('/profile')
 def profile_page():
     if is_logged_in():
         return render_template("profile.html", logged_in=is_logged_in(), session=session)
     else:
         return redirect('/')
+
 
 @app.route('/create-new-user', methods=['POST'])
 def create_new_user():
@@ -180,7 +202,7 @@ def log_in():
     # if given the email is not in the database this will raise an error
     # would be better to find out how to see if the query return an empty resultset
     try:
-        id = user_data[0][0]
+        userid = user_data[0][0]
         firstname = user_data[0][1]
         db_password = user_data[0][2]
     except IndexError:
@@ -191,7 +213,7 @@ def log_in():
         return redirect(request.referrer + "?error=Email+invalid+or+password+incorrect")
 
     session['email'] = email
-    session['id'] = id
+    session['userid'] = userid
     session['firstname'] = firstname
     return redirect(request.referrer)
 
@@ -204,7 +226,7 @@ def contact_page():
 @app.route('/register')
 def register_page():
     if is_logged_in():
-        return redirect("/" + "?error=Woops+you+tried+to+go+somewhere+you+shouldnt")
+        return redirect("/" + "?error=Whoops+you+tried+to+go+somewhere+you+shouldnt")
     return render_template("register.html")
 
 
@@ -219,9 +241,9 @@ def is_logged_in():
 
 @app.route('/trellos')
 def trellos():
-    ##################################################################
-    ### this route is just for testing, it isn't a page in the app ###
-    ##################################################################
+    ################################################################
+    # this route is just for testing, it isn't a page in the app ###
+    ################################################################
     try:
         print("##### SESSION DATA #####")
         for key in session.keys():
@@ -241,4 +263,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, use_debugger=False, use_reloader=False, passthrough_errors=True)
+    app.run(host='0.0.0.0')
