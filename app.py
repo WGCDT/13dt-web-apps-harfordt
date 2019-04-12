@@ -87,13 +87,21 @@ def initialise_tables(con):
     #     cur.execute(sql, user)
     #     con.commit()
 
-    create_purchase_table = """CREATE TABLE IF NOT EXISTS purchase(
-                                id INTEGER PRIMARY KEY,
-                                userid INTEGER NOT NULL ,
-                                productid INTEGER NOT NULL ,
-                                ordertime DATETIME NOT NULL
-                            )"""
-    create_table(con, create_purchase_table)
+    create_fp_order_table = """CREATE TABLE IF NOT EXISTS fp_order(
+                                    id INTEGER PRIMARY KEY,
+                                    userid INTEGER NOT NULL ,
+                                    ordertime DATETIME NOT NULL
+                                )"""
+    create_table(con, create_fp_order_table)
+
+
+
+    create_order_item_table = """CREATE TABLE IF NOT EXISTS order_item(
+                                    id INTEGER PRIMARY KEY,
+                                    orderid INTEGER NOT NULL ,
+                                    productid INTEGER NOT NULL
+                                )"""
+    create_table(con, create_order_item_table)
 
 
 @app.route('/')
@@ -133,14 +141,25 @@ def individual_product_page(product_id):
 
 @app.route('/addtocart/<productid>')
 def add_to_cart(productid):
-    con = create_connection(DB_NAME)
-    query = "INSERT INTO purchase(id, userid, productid, ordertime) VALUES (NULL,?,?,?)"
-    print(query)
-    now = datetime.now()
-    cur = con.cursor()
-    cur.execute(query, (session['userid'], productid, now))
-    con.commit()
-    con.close()
+    # check if the order list exists in the session
+    try:
+        session['order']
+    except KeyError:
+        session['order'] = []
+
+    # can't directly append to list in session, so need to fetch it, append, then overwrite in session
+    order_list = session['order']
+    order_list.append(productid)
+    session['order'] = order_list
+    print(session['order'])
+    # con = create_connection(DB_NAME)
+    # query = "INSERT INTO purchase(id, userid, productid, ordertime) VALUES (NULL,?,?,?)"
+    # print(query)
+    # now = datetime.now()
+    # cur = con.cursor()
+    # cur.execute(query, (session['userid'], productid, now))
+    # con.commit()
+    # con.close()
     return redirect(request.referrer + "?message=Added")
 
 
