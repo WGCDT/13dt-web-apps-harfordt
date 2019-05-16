@@ -9,6 +9,9 @@ from sqlite3 import Error
 from datetime import datetime
 from flask_bcrypt import Bcrypt
 
+from bs4 import BeautifulSoup
+import requests
+
 # from flask_session import Session
 
 DB_NAME = "flowerpot.db"
@@ -300,8 +303,7 @@ def logout():
     return redirect('/' + '?message=See+you+next+time!')
 
 
-from bs4 import BeautifulSoup
-import requests
+
 
 
 @app.route('/getphp')
