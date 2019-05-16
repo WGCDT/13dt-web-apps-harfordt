@@ -94,8 +94,6 @@ def initialise_tables(con):
                                 )"""
     create_table(con, create_fp_order_table)
 
-
-
     create_order_item_table = """CREATE TABLE IF NOT EXISTS order_item(
                                     id INTEGER PRIMARY KEY,
                                     orderid INTEGER NOT NULL ,
@@ -163,6 +161,27 @@ def add_to_cart(productid):
     return redirect(request.referrer + "?message=Added")
 
 
+@app.route('/cart')
+def cart_page():
+    con = create_connection(DB_NAME)
+    try:
+        order = session['order']
+    except KeyError:
+        session['order'] = []
+
+    query = """SELECT id, name, price FROM product WHERE id =(?)"""
+    order_items = []
+    print("ORDER ITEMS")
+    for item in order:
+        cur = con.cursor()
+        cur.execute(query, (item,))
+        order_data = cur.fetchall()
+        order_items.append(order_data[0])
+    con.close()
+    print(order_items)
+    return render_template("cart.html", logged_in=is_logged_in(), session=session, order_items=order_items)
+
+
 @app.route('/profile')
 def profile_page():
     if is_logged_in():
@@ -208,8 +227,8 @@ def create_new_user():
 
 @app.route('/login', methods=["POST"])
 def log_in():
-    email = request.form['login-email']
-    password = request.form['login-password']
+    email = request.form['login-email'].strip.lower()
+    password = request.form['login-password'].strip()
     # print(email, password)
 
     query = """SELECT id, firstname, password FROM user WHERE email = ?"""
@@ -279,6 +298,43 @@ def logout():
     [session.pop(key) for key in list(session.keys())]
     print(list(session.keys()))
     return redirect('/' + '?message=See+you+next+time!')
+
+
+from bs4 import BeautifulSoup
+import requests
+
+
+@app.route('/getphp')
+def get_php():
+    temp_url = "http://dtweb/websites2018/salpadorume/plant_health_monitor/"
+    r = requests.get(temp_url)
+    tempdata = BeautifulSoup(r.text, features="html.parser")
+    print(tempdata)
+    tempdata = tempdata.get_text().split("|")[:-1]
+    newtempdata = []
+    for reading in tempdata:
+        value = reading.split(",")
+        print(value)
+        newtempdata.append([value[2], float(value[1])])
+    print(newtempdata)
+    return render_template('charts.html', tempdata=newtempdata)
+
+
+# @app.route('/my_php', methods=['GET', 'POST'])
+# def php_post():
+#     url = 'http://dtweb/websites2018/salpadorume/plant_health_monitor/index.php'
+#     headers = {
+#
+#         'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+#         'Accept': 'application/json, text/javascript, */*; q=0.01',
+#         'Accept-Encoding': 'gzip, deflate, br',
+#         'X-Requested-With': 'XMLHttpRequest'
+#
+#     }
+#     data = urllib.parse.urlencode(request.form).encode('utf-8')
+#     resp = requests.post(url, data=data, headers=headers)
+#     print(resp)
+#     return json.dumps(resp.content).encode('utf-8')
 
 
 if __name__ == "__main__":

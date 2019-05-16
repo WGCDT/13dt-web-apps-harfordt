@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Temp data</h1>
+    {{ tempdata }}
+    {% for reading in tempdata %}
+        {{ reading }}<br>
+
+
+    {% endfor %}
+    <div id="linechart_material"></div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{#    <script>#}
+{#        google.charts.load('current', {'packages': ['line']});#}
+{#        google.charts.setOnLoadCallback(drawChart);#}
+{##}
+{#        function drawChart() {#}
+{##}
+{#            var data = new google.visualization.DataTable();#}
+{#            data.addColumn('number', 'id');#}
+{#            data.addColumn('number', 'Temperature');#}
+            {#https://developers.google.com/chart/interactive/docs/gallery/annotationchart#}
+{#            data.addRows({{ tempdata }});#}
+{##}
+{#            var options = {#}
+{#                chart: {#}
+{#                    title: 'Temperature readings',#}
+{#                    subtitle: 'in degrees Celsius (°C)'#}
+{#                },#}
+{#                width: 900,#}
+{#                height: 500#}
+{#            };#}
+{##}
+{#            var chart = new google.charts.Line(document.getElementById('linechart_material'));#}
+{##}
+{#            chart.draw(data, google.charts.Line.convertOptions(options));#}
+{#        }#}
+{#    </script>#}
+
+    <script type='text/javascript'>
+      google.charts.load('current', {'packages':['annotationchart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Date');
+        data.addColumn('number', 'Temperature');
+        data.addRows([
+            {% for reading in tempdata %}
+                [new Date("{{ reading[0] }}"), {{ reading[1] }}],
+            {% endfor %}
+          {#[new Date(2019, 6, 6), 21]#}
+        ]);
+
+        var chart = new google.visualization.AnnotationChart(document.getElementById('linechart_material'));
+
+        var options = {
+          displayAnnotations: true,
+            width:900,
+            height:400
+        };
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+{% endblock %}
