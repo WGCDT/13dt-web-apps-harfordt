@@ -12,7 +12,7 @@
         {% for product in products %}
             <div class="shadow card pb-3">
                 <img class="card-img-top" src="{{ url_for('static', filename='images/'+product[3]) }}"
-                     alt="Card image cap">
+                     alt="{{ product[2] }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ product[1] }}</h5>
                     <p class="card-text">{{ product[2] }}</p>
