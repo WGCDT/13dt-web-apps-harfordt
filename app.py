@@ -306,11 +306,19 @@ import requests
 
 @app.route('/getphp')
 def get_php():
+    # use BeautifulSoup to fetch the data from the php script
     temp_url = "http://dtweb/websites2018/salpadorume/plant_health_monitor/"
     r = requests.get(temp_url)
     tempdata = BeautifulSoup(r.text, features="html.parser")
     print(tempdata)
+
+    # the text is in a BeautifulSoup object which I can't do much with.
+    # This extracts the text from the page, splitting the values by the
+    # '|' separators and adding them to a list
     tempdata = tempdata.get_text().split("|")[:-1]
+
+    # Loops through the data, extracts the datetime and reading values
+    # and builds a new list from them
     newtempdata = []
     for reading in tempdata:
         value = reading.split(",")
@@ -318,23 +326,6 @@ def get_php():
         newtempdata.append([value[2], float(value[1])])
     print(newtempdata)
     return render_template('charts.html', tempdata=newtempdata)
-
-
-# @app.route('/my_php', methods=['GET', 'POST'])
-# def php_post():
-#     url = 'http://dtweb/websites2018/salpadorume/plant_health_monitor/index.php'
-#     headers = {
-#
-#         'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-#         'Accept': 'application/json, text/javascript, */*; q=0.01',
-#         'Accept-Encoding': 'gzip, deflate, br',
-#         'X-Requested-With': 'XMLHttpRequest'
-#
-#     }
-#     data = urllib.parse.urlencode(request.form).encode('utf-8')
-#     resp = requests.post(url, data=data, headers=headers)
-#     print(resp)
-#     return json.dumps(resp.content).encode('utf-8')
 
 
 if __name__ == "__main__":
