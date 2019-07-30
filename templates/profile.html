@@ -3,13 +3,38 @@
 {% block title %} Home {% endblock %}
 
 {% block head %}
-{{ super() }}
+    {{ super() }}
 {% endblock %}
 
 {% block body %}
-    <h2>Profile</h2>
-    {# this is just the session data at the moment. Will need to get all the profile info from the db and foramt it nicely #}
-    <p>Name: {{ session.firstname }}</p>
-    <p>Email: {{ session.email }}</p>
-    <p>Id: {{ session.userid }}</p>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2>Profile</h2>
+            {# this is just the session data at the moment. Will need to get all the profile info from the db and foramt it nicely #}
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Name: {{ session.firstname }}</p>
+                    <p>Email: {{ session.email }}</p>
+                    <p>Id: {{ session.userid }}</p>
+                </div>
+                <div class="col-md-6">
+                    {% if profile %}
+                        <img class="img-thumbnail w-100"
+                             src="{{ url_for('static', filename='images/profiles/'+session.userid|string+'.jpg') }}">
+                    {% else %}
+                        <img class="img-thumbnail w-100"
+                             src="{{ url_for('static', filename='images/profiles/default.png') }}">
+                    {% endif %}
+                    <form method="post" action="/profilepic" enctype="multipart/form-data">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <input type="file" class="form-control-file" id="profilepic" name="profilepic">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Upload &raquo;</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}}
