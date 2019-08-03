@@ -31,6 +31,7 @@ def create_connection(db_file):
         # connection = sqlite3.connect(db_file)
         connection = sqlite3.connect(path.join(ROOT, db_file))
         # initialise_tables(connection)
+        print(connection)
         return connection
     except Error as e:
         print(e)
