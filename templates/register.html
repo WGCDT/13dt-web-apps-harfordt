@@ -43,15 +43,45 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password"
                            required>
+                    <small id="passwordHelp" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="password2">Password</label>
                     <input type="password" class="form-control" id="password2" name="password2" placeholder="Password"
                            required>
+                    <small id="password2Help" class="form-text text-muted"></small>
                 </div>
                 <button type="submit" class="btn btn-success float-right">Submit</button>
                 <button type="reset" class="btn btn-outline-danger float-right mr-2">Clear form</button>
             </form>
         </div>
     </div>
-{% endblock %}}
+{% endblock %}
+{% block scripts %}
+    <script>
+
+        function checkPasswordMatch() {
+            var password = $("#password").val();
+            var confirmPassword = $("#password2").val();
+            console.log("|" + password + "|" + confirmPassword + "|");
+            if (password != confirmPassword) {
+                console.log("passwords not equal");
+                $("#password").addClass("password-no-match");
+                $("#password2").addClass("password-no-match");
+                $("#passwordHelp").text("Passwords don't match");
+                $("#password2Help").text("Passwords don't match");
+            } else {
+                console.log("passwords equal");
+                $("#password").removeClass("password-no-match");
+                $("#password2").removeClass("password-no-match");
+                $("#passwordHelp").text("");
+                $("#password2Help").text("");
+
+            }
+        }
+
+        $(document).ready(function () {
+            $("#password,#password2").keyup(checkPasswordMatch);
+        });
+    </script>
+{% endblock %}
