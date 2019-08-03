@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a3328bd0-3adf-4470-b30e-748e8ff5401f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/13dt-web-apps-harfordt.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/97ad5bf8-4ce6-4c3b-94f9-17b69877c909.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/97ad5bf8-4ce6-4c3b-94f9-17b69877c909/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/send_mail_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/robson.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__2_.coverage" NAME="comic_store (2) Coverage Results" MODIFIED="1563268693225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Kerr, Lydia" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_book_store.coverage" NAME="comic_book_store Coverage Results" MODIFIED="1563268803358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Teichert, Elizabeth" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$ComicBookStore__1_.coverage" NAME="ComicBookStore (1) Coverage Results" MODIFIED="1563272915438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Hill, Emily" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comicbookstore.coverage" NAME="comicbookstore Coverage Results" MODIFIED="1563268311722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Amos, Ella" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__1_.coverage" NAME="comic_store (1) Coverage Results" MODIFIED="1563268577451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Jain, Aarohi" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$temp_check2.coverage" NAME="temp_check2 Coverage Results" MODIFIED="1560723098769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="N:/11DT/2019 Python" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__8_.coverage" NAME="comic_store (8) Coverage Results" MODIFIED="1563271392132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Ngan Uridge, Sydnie" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$Flask_____13dt_web_apps_hreeve_app_py_.coverage" NAME="Flask (../13dt-web-apps-hreeve/app.py) Coverage Results" MODIFIED="1557995939411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$doughnut_store.coverage" NAME="doughnut_store Coverage Results" MODIFIED="1563268564404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F de Groen, Lily" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__10_.coverage" NAME="comic_store (10) Coverage Results" MODIFIED="1563269966706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Shaw, Zelia" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$counting_in_2s.coverage" NAME="counting_in_2s Coverage Results" MODIFIED="1561084025432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="N:/11DT/2019 Python" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__3_.coverage" NAME="comic_store (3) Coverage Results" MODIFIED="1563268735950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Lagoutaris, Katerina" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__11_.coverage" NAME="comic_store (11) Coverage Results" MODIFIED="1563271974094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Tran, Trinity" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1561669064956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store.coverage" NAME="comic_store Coverage Results" MODIFIED="1563268190080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Akerblom, Chloe" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__7_.coverage" NAME="comic_store (7) Coverage Results" MODIFIED="1563270949821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/McNeill, Anna" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$liftoff.coverage" NAME="liftoff Coverage Results" MODIFIED="1561083069741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="N:/11DT/2019 Python" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$Flask_____blog_example_app_py_.coverage" NAME="Flask (../blog_example/app.py) Coverage Results" MODIFIED="1559003425617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comic_store__4_.coverage" NAME="comic_store (4) Coverage Results" MODIFIED="1563273229565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/le Quesne, Emma" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$mysql_test.coverage" NAME="mysql_test Coverage Results" MODIFIED="1556592783430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/13dt_web_apps_harfordt$comicstore.coverage" NAME="comicstore Coverage Results" MODIFIED="1563268465014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Cross, Charlotte" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - flowerpot.db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - flowerpot.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - flowerpot.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - flowerpot.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="user: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://97ad5bf8-4ce6-4c3b-94f9-17b69877c909/schema/main/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/robson.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="130" column="14" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="234" column="41" selection-start-line="234" selection-start-column="41" selection-end-line="234" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/trellos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1693">
+              <caret selection-end-line="8" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/products.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="533">
+              <caret line="13" column="96" selection-start-line="13" selection-start-column="96" selection-end-line="13" selection-end-column="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/product.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3198">
+              <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fetch</find>
+      <find>datetime</find>
+      <find>['user</find>
+      <find>account</find>
+      <find>/account</find>
+      <find>you+</find>
+      <find>redirect</find>
+      <find>'/products</find>
+      <find>create-new</find>
+      <find>session</find>
+      <find>login</find>
+      <find>products</find>
+      <find>product</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/templates/trellos.html" />
+        <option value="$PROJECT_DIR$/static/css/flowerpot.css" />
+        <option value="$PROJECT_DIR$/../blog_example/app.py" />
+        <option value="$PROJECT_DIR$/../blog_example/robson.py" />
+        <option value="$PROJECT_DIR$/templates/cart.html" />
+        <option value="$PROJECT_DIR$/mysql_test.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/charts.html" />
+        <option value="&lt;a96ded15-d585-438b-95ca-1794e7b6cfd2&gt;/index.php" />
+        <option value="$PROJECT_DIR$/../comic-book-store-straightve/comic_store.py" />
+        <option value="$PROJECT_DIR$/../13dt-web-apps-hreeve/app.py" />
+        <option value="N:/11DT/2019 Python/temp_check2.py" />
+        <option value="N:/12DT/2019 sites/sydney/gallery.html" />
+        <option value="N:/12DT/2019 sites/sydney/index.html" />
+        <option value="N:/12DT/2019 sites/sydney/css/sydney.css" />
+        <option value="N:/12DT/2019 sites/sydney/thingstodo.html" />
+        <option value="N:/12DT/2019 sites/sydney/contact.html" />
+        <option value="N:/11DT/2019 Python/liftoff.py" />
+        <option value="N:/11DT/2019 Python/counting_in_2s.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/97ad5bf8-4ce6-4c3b-94f9-17b69877c909/console.sql" />
+        <option value="$PROJECT_DIR$/templates/register.html" />
+        <option value="$PROJECT_DIR$/templates/products.html" />
+        <option value="$PROJECT_DIR$/templates/product.html" />
+        <option value="$PROJECT_DIR$/templates/profile.html" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/robson.html" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-40" />
+    <option name="y" value="-20" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="13dt-web-apps-harfordt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13dt-web-apps-harfordt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="13dt-web-apps-harfordt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="13dt-web-apps-harfordt" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite.xerial" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\harfordt\PycharmProjects\13dt-web-apps-harfordt\static\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\harfordt\PycharmProjects\13dt-web-apps-harfordt\static\images\profiles" />
+      <recent name="C:\Users\harfordt\PycharmProjects\13dt-web-apps-harfordt\static\images" />
+      <recent name="C:\Users\harfordt\PycharmProjects\13dt-web-apps-harfordt\static" />
+      <recent name="C:\Users\harfordt\PycharmProjects\13dt-web-apps-harfordt\static\css" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer" factoryName="Flask server">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="13dt-web-apps-hreeve" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ComicBookStore (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="2019 - Comic book store" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Hill, Emily" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Hill, Emily/ComicBookStore (1).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="comic_store (11)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="2019 - Comic book store" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Tran, Trinity" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Tran, Trinity/comic_store (11).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="comic_store (4)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="2019 - Comic book store" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/le Quesne, Emma" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/le Quesne, Emma/comic_store (4).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="comic_store (7)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="2019 - Comic book store" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/McNeill, Anna" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/McNeill, Anna/comic_store (7).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="comic_store (8)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="2019 - Comic book store" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Ngan Uridge, Sydnie" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Ngan Uridge, Sydnie/comic_store (8).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="13dt-web-apps-harfordt" type="Python.FlaskServer" factoryName="Flask server">
+      <module name="13dt-web-apps-harfordt" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3328bd0-3adf-4470-b30e-748e8ff5401f" name="Default Changelist" comment="" />
+      <created>1554455909232</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554455909232</updated>
+      <workItem from="1554455910646" duration="5485000" />
+      <workItem from="1554768442527" duration="6714000" />
+      <workItem from="1554801193756" duration="21721000" />
+      <workItem from="1554979085804" duration="8436000" />
+      <workItem from="1556590714470" duration="1793000" />
+      <workItem from="1557350382110" duration="664000" />
+      <workItem from="1557449992089" duration="6489000" />
+      <workItem from="1557702669415" duration="5133000" />
+      <workItem from="1557976185810" duration="3366000" />
+      <workItem from="1558325476881" duration="369000" />
+      <workItem from="1558408664756" duration="699000" />
+      <workItem from="1559000778363" duration="3181000" />
+      <workItem from="1560722335998" duration="1980000" />
+      <workItem from="1560803219042" duration="7385000" />
+      <workItem from="1561074470243" duration="27000" />
+      <workItem from="1561345072470" duration="248000" />
+      <workItem from="1561345359528" duration="5650000" />
+      <workItem from="1561429215463" duration="34000" />
+      <workItem from="1561634273272" duration="9532000" />
+      <workItem from="1562016144448" duration="719000" />
+      <workItem from="1563268022614" duration="5116000" />
+      <workItem from="1563331842124" duration="76000" />
+      <workItem from="1563331936177" duration="36000" />
+      <workItem from="1563333191012" duration="5000" />
+      <workItem from="1564794028439" duration="229000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial upload">
+      <created>1554461164608</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554461164608</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added base font">
+      <created>1554461183272</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554461183272</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Template for individual product page">
+      <created>1554461206831</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554461206831</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Formattec">
+      <created>1554461225261</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554461225261</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Display all products from database">
+      <created>1554461265244</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1554461265244</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added default font">
+      <created>1554461285424</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554461285424</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Database connection, and routes for product pages">
+      <created>1554461341406</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554461341406</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added some margin-top to body so the content doesn't hide behind the nav">
+      <created>1554783795646</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554783795646</updated>
+    </task>
+    <task id="LOCAL-00009" summary="SQL to create tables and insert data">
+      <created>1554783839126</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554783839126</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Latest db">
+      <created>1554783867159</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554783867159</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Completed products and individual product pages">
+      <created>1554805359220</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1554805359221</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Register users">
+      <created>1554807259766</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1554807259766</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Login email/password are verified and session var 'email' is set">
+      <created>1554810648849</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1554810648849</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Initial commit">
+      <created>1554946523233</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1554946523233</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Navbar changes for logged in users">
+      <created>1554946551465</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1554946551465</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Login verifies and sets session data. Session data and login status passed to templates">
+      <created>1554946603441</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1554946603441</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Only show add to cart button when logged in">
+      <created>1554980748660</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1554980748660</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Users can add to cart">
+      <created>1554980773646</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1554980773646</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add cart in session, stores a list of ids">
+      <created>1555038734842</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1555038734842</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Graph stuff for Mehara">
+      <created>1557996137158</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1557996137158</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add Font Awesome files">
+      <created>1557996175030</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1557996175030</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Updated nav, linked Font Awesome, cart template">
+      <created>1557996244858</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1557996244858</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Commented get_php() for Mehara">
+      <created>1557996555344</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1557996555344</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Commented get_php() for Mehara, moved import statements to top so they are all together">
+      <created>1557996633121</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1557996633121</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="101749000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18926175" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.18130311" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3201133" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067115" side_tool="true" weight="0.43235293" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32719547" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.17516778" />
+      <window_info anchor="right" id="Remote Host" order="5" weight="0.3295302" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.30588236" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.48866856" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067115" side_tool="true" weight="0.43235293" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32794118" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.19664429" />
+      <window_info anchor="right" id="Remote Host" order="5" weight="0.3295302" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial upload" />
+    <MESSAGE value="Added base font" />
+    <MESSAGE value="Template for individual product page" />
+    <MESSAGE value="Formattec" />
+    <MESSAGE value="Display all products from database" />
+    <MESSAGE value="Added default font" />
+    <MESSAGE value="Database connection, and routes for product pages" />
+    <MESSAGE value="Added some margin-top to body so the content doesn't hide behind the nav" />
+    <MESSAGE value="SQL to create tables and insert data" />
+    <MESSAGE value="Latest db" />
+    <MESSAGE value="Completed products and individual product pages" />
+    <MESSAGE value="Register users" />
+    <MESSAGE value="Login email/password are verified and session var 'email' is set" />
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Navbar changes for logged in users" />
+    <MESSAGE value="Login verifies and sets session data. Session data and login status passed to templates" />
+    <MESSAGE value="Only show add to cart button when logged in" />
+    <MESSAGE value="Users can add to cart" />
+    <MESSAGE value="Add cart in session, stores a list of ids" />
+    <MESSAGE value="Graph stuff for Mehara" />
+    <MESSAGE value="Add Font Awesome files" />
+    <MESSAGE value="Updated nav, linked Font Awesome, cart template" />
+    <MESSAGE value="Commented get_php() for Mehara" />
+    <MESSAGE value="Commented get_php() for Mehara, moved import statements to top so they are all together" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commented get_php() for Mehara, moved import statements to top so they are all together" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../blog_example/templates/new-blog-post.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/flowerpot.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask_bcrypt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="164" column="8" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://97ad5bf8-4ce6-4c3b-94f9-17b69877c909/schema/main/table/purchase" />
+    <entry file="file://$PROJECT_DIR$/../blog_example/robson.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="76" column="8" lean-forward="true" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../blog_example/static/css/all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7521" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/charts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../blog_example/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="76" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../blog_example/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="10" selection-start-line="144" selection-start-column="4" selection-end-line="144" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://N:/11DT/2019 Python/temp_check2.py" />
+    <entry file="file://N:/12DT/2019 sites/sydney/gallery.html" />
+    <entry file="file://N:/12DT/2019 sites/sydney/index.html" />
+    <entry file="file://N:/12DT/2019 sites/sydney/thingstodo.html" />
+    <entry file="file://N:/12DT/2019 sites/sydney/css/sydney.css" />
+    <entry file="file://N:/12DT/2019 sites/sydney/contact.html" />
+    <entry file="file://N:/11DT/2019 Python/liftoff.py" />
+    <entry file="file://N:/11DT/2019 Python/counting_in_2s.py" />
+    <entry file="file://$PROJECT_DIR$/../comic-book-store-straightve/comic_store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16605">
+          <caret line="406" column="3" selection-start-line="406" selection-start-column="3" selection-end-line="406" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0b7e896c-9157-49db-b57e-ad142a9864c0/console.sql" />
+    <entry file="das://97ad5bf8-4ce6-4c3b-94f9-17b69877c909/schema/main/table/order_item" />
+    <entry file="das://97ad5bf8-4ce6-4c3b-94f9-17b69877c909/schema/main/table/fp_order" />
+    <entry file="file://$PROJECT_DIR$/../13dt-web-apps-hreeve/templates/acc_info.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../13dt-web-apps-hreeve/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/97ad5bf8-4ce6-4c3b-94f9-17b69877c909/console.sql" />
+    <entry file="file://$PROJECT_DIR$/static/images/profiles/6.jpg" />
+    <entry file="das://97ad5bf8-4ce6-4c3b-94f9-17b69877c909/schema/main/table/product">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Akerblom, Chloe/comic_store.py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Amos, Ella/comicbookstore.py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/F Teichert, Elizabeth/comic_book_store.py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Shaw, Zelia/authenticitysheet.jpg" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Shaw, Zelia/comic_store (10).py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/McNeill, Anna/comic_store (7).py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Ngan Uridge, Sydnie/comic_store (8).py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Tran, Trinity/comic_store (11).py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/Hill, Emily/ComicBookStore (1).py" />
+    <entry file="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/le Quesne, Emma/comic_store (4).py" />
+    <entry file="das://97ad5bf8-4ce6-4c3b-94f9-17b69877c909/schema/main/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/products.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="13" column="96" selection-start-line="13" selection-start-column="96" selection-end-line="13" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3198">
+          <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="234" column="41" selection-start-line="234" selection-start-column="41" selection-end-line="234" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trellos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1693">
+          <caret selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/robson.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="130" column="14" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -150,7 +150,7 @@ def create_new_user():
         if len(item) < 1:
             return redirect(request.referrer + "?error=Please+enter+valid+data+in+all+fields")
 
-    hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+    hashed_password = bcrypt.generate_password_hash(password)
     # print("Hashed:",hashed_password)
 
     con = create_connection(DB_NAME)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/13dt-web-apps-harfordt.iml" filepath="$PROJECT_DIR$/.idea/13dt-web-apps-harfordt.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/.idea/2019 - Comic book store.iml" filepath="$USER_HOME$/Downloads/2019 - Comic book store-20190716T083202Z-001/2019 - Comic book store/.idea/2019 - Comic book store.iml" />
+      <module fileurl="file://N:/11DT/2019 Python/.idea/2019 Python.iml" filepath="N:/11DT/2019 Python/.idea/2019 Python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../blog_example/.idea/blog_example.iml" filepath="$PROJECT_DIR$/../blog_example/.idea/blog_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plant_health_monitor/.idea/plant_health_monitor.iml" filepath="$PROJECT_DIR$/../plant_health_monitor/.idea/plant_health_monitor.iml" />
+      <module fileurl="file://N:/12DT/2019 sites/sydney/.idea/sydney.iml" filepath="N:/12DT/2019 sites/sydney/.idea/sydney.iml" />
+    </modules>
+  </component>
+</project>

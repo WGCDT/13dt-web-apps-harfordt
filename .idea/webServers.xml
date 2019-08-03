@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a96ded15-d585-438b-95ca-1794e7b6cfd2" name="dtweb" url="http://dtweb/websites2018/salpadorume/plant_health_monitor">
+        <fileTransfer host="dtweb" port="21" rootFolder="/plant_health_monitor">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
