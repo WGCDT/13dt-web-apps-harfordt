@@ -3,6 +3,7 @@ import sys
 sys.path.append("N:\python-modules")
 
 import os
+from os import path
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
 from sqlite3 import Error
@@ -22,12 +23,13 @@ app.secret_key = "banana"
 
 UPLOAD_FOLDER = '/static/images/profiles'
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg'])
-
+ROOT = path.dirname(path.realpath(__file__))
 
 def create_connection(db_file):
     """create a connection to the sqlite db"""
     try:
-        connection = sqlite3.connect(db_file)
+        # connection = sqlite3.connect(db_file)
+        connection = sqlite3.connect(path.join(ROOT, db_file))
         # initialise_tables(connection)
         return connection
     except Error as e:
@@ -282,5 +284,5 @@ def get_php():
 
 
 if __name__ == "__main__":
-    # app.run(host='0.0.0.0')
-    pass
+    app.run(host='0.0.0.0')
+    # pass
