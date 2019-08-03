@@ -7,23 +7,41 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Profile</h2>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">Product</th>
-            <th scope="col">Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in order_items %}
+    <h2>Cart</h2>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-dark">
             <tr>
-                <th>{{ item[0] }}</th>
-                <td>{{ item[1] }}</td>
-                <td>${{ item[2] }}</td>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Subtotal</th>
+                <th></th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for item in order_items %}
+                {% set total = 0 %}
+                <tr>
+                    <td>{{ item[1] }}</td>
+                    <td>${{ item[2] }}</td>
+                    <td>{{ item[3] }}</td>
+                    <td>${{ item[3] * item[2] }}</td>
+                    <td><a href="/remove-from-cart/{{ item[0] }}"><i class="far fa-times-circle"></i></a></td>
+                </tr>
+                {#            {%  set subtotal = item[0] * item[2] %}#}
+                {#            {% set total = total + (item[0] * item[2]) %}#}
+                {#            {{ total }}#}
+            {% endfor %}
+            <tr class="table-active">
+                <td></td>
+                <td></td>
+                <td>Total:</td>
+                <td>${{ total_price }}</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-success float-right" href="/checkout">Check out &raquo;</a>
 {% endblock %}}

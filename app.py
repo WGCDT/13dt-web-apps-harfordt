@@ -14,7 +14,10 @@ from flask_bcrypt import Bcrypt
 from bs4 import BeautifulSoup
 import requests
 
-# from flask_session import Session
+# for email
+import smtplib, ssl
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 DB_NAME = "flowerpot.db"
 app = Flask(__name__)
@@ -25,13 +28,12 @@ UPLOAD_FOLDER = '/static/images/profiles'
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg'])
 ROOT = path.dirname(path.realpath(__file__))
 
+
 def create_connection(db_file):
     """create a connection to the sqlite db"""
     try:
-        # connection = sqlite3.connect(db_file)
         connection = sqlite3.connect(path.join(ROOT, db_file))
         # initialise_tables(connection)
-        print(connection)
         return connection
     except Error as e:
         print(e)
@@ -41,37 +43,43 @@ def create_connection(db_file):
 
 @app.route('/')
 def home_page():
-    return render_template("home.html", logged_in=is_logged_in(), session=session)
+    message = request.args.get('message')
+
+    return render_template("home.html", logged_in=is_logged_in(), session=session, message=message)
 
 
 @app.route('/products')
 def products_page():
+    message = request.args.get('message')
     # connect to the database
     con = create_connection(DB_NAME)
 
     query = "SELECT id, name, image FROM product"  # SELECT the things you want from your table(s)
+
     cur = con.cursor()  # You need this line next
     cur.execute(query)  # this line actually executes the query
     products = cur.fetchall()  # puts the results into a list usable in python
-    print("Product data", products)
     con.close()  # close the connection, super important
 
     # pass the results to the template to create the page
     # return render_template("products.html")
-    return render_template("products.html", products=products, logged_in=is_logged_in())
+    return render_template("products.html", products=products, logged_in=is_logged_in(), message=message)
 
 
 @app.route('/products/<product_id>')
 def individual_product_page(product_id):
-    print(product_id)
+    """Retrieves data for product with given id, renders product page"""
+    message = request.args.get('message')
     con = create_connection(DB_NAME)
+
     query = "SELECT * FROM product WHERE id=?"
     cur = con.cursor()
-    cur.execute(query, (product_id,))
+    cur.execute(query, (product_id,))  # comma is because combined value(s) must be a tuple
     product_data = cur.fetchall()
-    # print(product_data)
     con.close()
-    return render_template("product.html", product=product_data[0], logged_in=is_logged_in(), session=session)
+    print(product_data)
+    return render_template("product.html", product=product_data[0], logged_in=is_logged_in(), session=session,
+                           message=message)
 
 
 @app.route('/addtocart/<productid>')
@@ -87,19 +95,13 @@ def add_to_cart(productid):
     order_list.append(productid)
     session['order'] = order_list
     print(session['order'])
-    # con = create_connection(DB_NAME)
-    # query = "INSERT INTO purchase(id, userid, productid, ordertime) VALUES (NULL,?,?,?)"
-    # print(query)
-    # now = datetime.now()
-    # cur = con.cursor()
-    # cur.execute(query, (session['userid'], productid, now))
-    # con.commit()
-    # con.close()
+
     return redirect(request.referrer + "?message=Added")
 
 
 @app.route('/cart')
 def cart_page():
+    message = request.args.get('message')
     con = create_connection(DB_NAME)
 
     # 1) Make an empty order list.
@@ -110,26 +112,116 @@ def cart_page():
     except KeyError:
         session['order'] = order
 
+    if len(order) == 0:
+        return redirect('/products?message=Your+cart+is+empty')
+
     query = """SELECT id, name, price FROM product WHERE id =(?)"""
     order_items = []
-    print("ORDER ITEMS")
+
+    counted = []
+    total_price = 0
     for item in order:
+        if item in counted:
+            continue
+        counted.append(item)
+        num_item = order.count(item)
         cur = con.cursor()
         cur.execute(query, (item,))
         order_data = cur.fetchall()
-        order_items.append(order_data[0])
+        data = order_data[0]
+        total_price += (data[2] * num_item)
+        data = (data[0], data[1], data[2], num_item)
+        order_items.append(data)
     con.close()
-    print(order_items)
-    return render_template("cart.html", logged_in=is_logged_in(), session=session, order_items=order_items)
+
+    return render_template("cart.html", logged_in=is_logged_in(), session=session, order_items=order_items,
+                           total_price=total_price, message=message)
+
+
+@app.route('/remove-from-cart/<id>')
+def remove_from_cart(id):
+    if not is_logged_in():
+        return redirect('/?message=You+must+be+logged+in+to+do+this')
+
+    try:
+        order = session['order']
+        order.remove(id)
+        session['order'] = order
+    except KeyError:
+        session['order'] = []
+
+    return redirect('/cart')
+
+
+@app.route('/checkout')
+def checkout():
+    if not is_logged_in():
+        return redirect('/?message=You+must+be+logged+in+to+do+this')
+    try:
+        order = session['order']
+        customer_email = session['email']
+    except KeyError:
+        session['order'] = []
+        return redirect('/?message=Something+went+wrong')
+
+    # check if the order array has anything in it
+    if len(order) == 0:
+        return redirect('/?message=Something+went+wrong')
+
+    con = create_connection(DB_NAME)
+    query = """SELECT name, price FROM product WHERE id =(?)"""
+
+    counted = []
+    total_price = 0
+    html = "<h1>Thanks</h1>\n"
+    html += "<p>Your purchase is appreciated and we hope you enjoy!</p>\n"
+    html += "<table><tr><th>Item name</th><th>Price</th><th>Quantity</th><tr>"
+    for item in order:
+        if item in counted:
+            continue
+        counted.append(item)
+        num_item = order.count(item)
+        cur = con.cursor()
+        cur.execute(query, (item,))
+        order_data = cur.fetchall()
+        data = order_data[0]
+        name = data[0]
+        price = data[1]
+        total_price += (price * num_item)
+        line = "<tr><td>{}</td><td>${}</td><td>{}</td></tr>\n".format(name, price, num_item)
+        html += line
+    html += "<tr><td></td><td><strong>Total:</strong></td><td><strong>${}</strong></td></tr>\n".format(total_price)
+    html += "<br><p>See you next time!</p>\n"
+    print(html)
+    con.close()
+
+    sender_email = "timharfordwgc@gmail.com"
+    banana = "9?NGFeV2"
+    message = MIMEMultipart('alternative')
+    message['Subject'] = "Your Flowerpot order"
+    message['From'] = sender_email
+    message['To'] = customer_email
+
+    content = MIMEText(html, 'html')
+    message.attach(content)
+
+    port = 465  # For SSL
+    smtp_server = "smtp.gmail.com"
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+        server.login(sender_email, banana)
+        server.sendmail(sender_email, customer_email, message.as_string())
+    session['order'] = []
+    return redirect('/?message=Thanks+for+your+order!')
 
 
 @app.route('/profile')
 def profile_page():
+    message = request.args.get('message')
     if is_logged_in():
-        print('static/images/profiles/' + str(session['userid']) + '.jpg')
         exists = os.path.isfile('static/images/profiles/' + str(session['userid']) + '.jpg')
-        print(exists)
-        return render_template("profile.html", logged_in=is_logged_in(), session=session, profile=exists)
+        return render_template("profile.html", logged_in=is_logged_in(), session=session, profile=exists,
+                               message=message)
     else:
         return redirect('/')
 
@@ -143,7 +235,6 @@ def create_new_user():
     email = request.form['email'].strip().lower()
     password = request.form['password'].strip()
     password2 = request.form['password2'].strip()
-    # print(fname, lname, dob, wananga, email, phone, password, password2)
 
     if password != password2:
         print()
@@ -154,7 +245,6 @@ def create_new_user():
             return redirect(request.referrer + "?error=Please+enter+valid+data+in+all+fields")
 
     hashed_password = bcrypt.generate_password_hash(password)
-    # print("Hashed:",hashed_password)
 
     con = create_connection(DB_NAME)
     now = datetime.now()
@@ -173,14 +263,13 @@ def create_new_user():
 def log_in():
     email = request.form['login-email'].strip().lower()
     password = request.form['login-password'].strip()
-    # print(email, password)
 
     query = """SELECT id, firstname, password FROM user WHERE email = ?"""
     con = create_connection(DB_NAME)
     cur = con.cursor()
     cur.execute(query, (email,))
     user_data = cur.fetchall()
-    print(user_data)
+
     # if given the email is not in the database this will raise an error
     # would be better to find out how to see if the query return an empty resultset
     try:
@@ -192,7 +281,6 @@ def log_in():
 
     # check if the password is incorrect for that email address
     if not bcrypt.check_password_hash(db_password, password):
-        print("email or pw prob")
         return redirect(request.referrer + "?error=Email+invalid+or+password+incorrect")
 
     session['email'] = email
@@ -205,8 +293,6 @@ def log_in():
 @app.route('/profilepic', methods=['get', 'post'])
 def upload_profile():
     file = request.files['profilepic']
-    # print(file.filename)
-    # extension = os.path.splitext(file.filename)[-1].lower()
     file.filename = str(session['userid']) + '.jpg'
     file.save('static/images/profiles/' + file.filename)
     return redirect("/profile")
@@ -214,14 +300,16 @@ def upload_profile():
 
 @app.route('/contact')
 def contact_page():
-    return render_template("contact.html", logged_in=is_logged_in(), session=session)
+    message = request.args.get('message')
+    return render_template("contact.html", logged_in=is_logged_in(), session=session, message=message)
 
 
 @app.route('/register')
 def register_page():
+    message = request.args.get('message')
     if is_logged_in():
         return redirect("/" + "?error=Whoops+you+tried+to+go+somewhere+you+shouldnt")
-    return render_template("register.html")
+    return render_template("register.html", message=message)
 
 
 def is_logged_in():
@@ -235,10 +323,13 @@ def is_logged_in():
 
 @app.route('/robson')
 def robson():
-    return render_template('robson.html')
+    message = request.args.get('message')
+    return render_template('robson.html', message=message)
+
 
 @app.route('/trellos')
 def trellos():
+    message = request.args.get('message')
     ################################################################
     # this route is just for testing, it isn't a page in the app ###
     ################################################################
@@ -249,7 +340,7 @@ def trellos():
     except KeyError:
         print("NO")
     print("### END SESSION DATA ###")
-    return render_template("trellos.html")
+    return render_template("trellos.html", message=message)
 
 
 @app.route('/logout')
@@ -262,6 +353,7 @@ def logout():
 
 @app.route('/getphp')
 def get_php():
+    message = request.args.get('message')
     # use BeautifulSoup to fetch the data from the php script
     temp_url = "http://dtweb/websites2018/salpadorume/plant_health_monitor/"
     r = requests.get(temp_url)
@@ -281,9 +373,8 @@ def get_php():
         print(value)
         newtempdata.append([value[2], float(value[1])])
     print(newtempdata)
-    return render_template('charts.html', tempdata=newtempdata)
+    return render_template('charts.html', tempdata=newtempdata, message=message)
 
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
-    # pass

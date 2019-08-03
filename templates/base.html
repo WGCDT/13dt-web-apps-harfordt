@@ -72,6 +72,14 @@
         <h1>Flowerpot</h1>
         <p class="lead">WGC's home of gifts.</p>
     </div>
+    {% if message is not none %}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <p>{{ message }}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
     {% block body %}{% endblock %}
 
 </main>
@@ -80,7 +88,7 @@
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 <script>
     $(document).ready(function () {
-        console.log("/" + (location.pathname+location.search).substr(1))
+        console.log("/" + (location.pathname + location.search).substr(1))
     });
 </script>
 {% block scripts %}{% endblock %}
