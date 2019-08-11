@@ -162,11 +162,11 @@ def checkout():
         customer_email = session['email']
     except KeyError:
         session['order'] = []
-        return redirect('/?message=Something+went+wrong')
+        return redirect(request.referrer + '?message=Something+went+wrong')
 
     # check if the order array has anything in it
     if len(order) == 0:
-        return redirect('/?message=Something+went+wrong')
+        return redirect(request.referrer + '?message=Your+order+is+empty')
 
     con = create_connection(DB_NAME)
     query = """SELECT name, price FROM product WHERE id =(?)"""
@@ -308,7 +308,7 @@ def contact_page():
 def register_page():
     message = request.args.get('message')
     if is_logged_in():
-        return redirect("/" + "?error=Whoops+you+tried+to+go+somewhere+you+shouldnt")
+        return redirect("/?error=Whoops+you+tried+to+go+somewhere+you+shouldnt")
     return render_template("register.html", message=message)
 
 
@@ -348,7 +348,7 @@ def logout():
     print(list(session.keys()))
     [session.pop(key) for key in list(session.keys())]
     print(list(session.keys()))
-    return redirect('/' + '?message=See+you+next+time!')
+    return redirect('/?message=See+you+next+time!')
 
 
 @app.errorhandler(404)
