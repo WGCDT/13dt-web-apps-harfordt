@@ -355,7 +355,7 @@ def logout():
 def page_not_found(e):
     print(e)
     # message=None is needed because the template checks for a GET parameter called message
-    return render_template("404.html", message=None)
+    return render_template("404.html", message=None, error=e, logged_in=is_logged_in())
 
 
 @app.route('/getphp')

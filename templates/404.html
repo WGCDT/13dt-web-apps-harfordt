@@ -7,6 +7,20 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Oh no!</h2>
-    <p>You've tried to go somewhere you can't! Try going <a href="/">home</a></p>
+
+    <div class="alert alert-info" role="alert">
+  <h2 class="alert-heading">Oh no!</h2>
+  <p>You've tried to go somewhere you can't! Try going <a href="/">home</a>
+      {% if not loggedin %}
+        or try signing in (<a href="/register">click here to register</a> if you haven't).
+      {% endif %}
+  </p>
+    <p>Here's a picture of a kitten to cheer you up:</p>
+    <img style="margin:auto !important; max-width:100%;" src="https://loremflickr.com/320/240/kitten">
+
+  <hr>
+  <p class="mb-0">FYI {{ error }} :(</p>
+</div>
+    <h2></h2>
+    <p></p>
 {% endblock %}}
