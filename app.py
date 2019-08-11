@@ -350,6 +350,10 @@ def logout():
     print(list(session.keys()))
     return redirect('/' + '?message=See+you+next+time!')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    print(e)
+    return render_template("404.html")
 
 @app.route('/getphp')
 def get_php():
